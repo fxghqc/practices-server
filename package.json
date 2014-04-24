@@ -13,7 +13,7 @@
     "koa-router": "^1.0.2",
     "koa-session": "^1.2.0",
     "koa-static": "^1.4.0",
-    "streaming-json-stringify": "^1.0.0",
+    "streaming-json-stringify": "^1.0.0"
   },
   "devDependencies": {
     "co": "*",
