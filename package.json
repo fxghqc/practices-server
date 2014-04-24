@@ -1,0 +1,31 @@
+{
+  "name": "practices-server",
+  "description": "rest api use Koa",
+  "version": "0.0.1",
+  "repository": "https://github.com/fxghqc/practices-server",
+  "bugs": "https://github.com/fxghqc/practices-server/issues",
+  "dependencies": {
+    "co": "^3.0.0",
+    "co-body": "0.0.1",
+    "koa": "^0.5.0",
+    "koa-basic-auth": "^1.1.1",
+    "koa-logger": "^1.1.0",
+    "koa-router": "^1.0.2",
+    "koa-session": "^1.2.0",
+    "koa-static": "^1.4.0",
+    "streaming-json-stringify": "^1.0.0",
+  },
+  "devDependencies": {
+    "co": "*",
+    "mocha": "*",
+    "should": "*",
+    "supertest": "*"
+  },
+  "scripts": {
+    "test": "make test"
+  },
+  "engines": {
+    "node": ">= 11.3"
+  },
+  "license": "MIT"
+}
