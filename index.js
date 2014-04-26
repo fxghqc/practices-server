@@ -2,6 +2,7 @@
  * Module dependencies.
  */
 
+var oauthserver = require('koa-oauth-server');
 var logger = require('koa-logger');
 var route = require('koa-route');
 var koa = require('koa');
@@ -12,6 +13,14 @@ var posts = [];
 
 // middleware
 app.use(logger());
+
+app.oauth = oauthserver({
+  model: {},
+  grants: ['password'],
+  debug: true
+});
+
+app.use(app.oauth.authorise());
 
 // route middleware
 app.use(route.get('/:owner', getOwner));
