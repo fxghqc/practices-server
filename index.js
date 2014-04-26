@@ -15,23 +15,42 @@ app.use(logger());
 
 // route middleware
 app.use(route.get('/:owner', getOwner));
-app.use(route.post('/:owner?type=:type', createOwner));
-app.use(route.get('/:owner/:name', showStuff));
-app.use(route.post('/:owner/:name?type=type', addStuff));
+app.use(route.post('/:owner', createOwner));
+app.use(route.get('/:owner/:name', getStuff));
+app.use(route.post('/:owner/:name', createStuff));
 
 /**
- * Show post :id.
+ * Get info of owner.
  */
 function *getOwner(owner) {
   owner = decodeURI(owner);
-  var res = yield books.find({});
+  var res = yield {hello: owner};
   this.body = res;
 }
 
 /**
- * Create a post.
+ * Create a owner.
  */
 function *createOwner(owner) {
+  title = decodeURI(title);
+  var res = yield books.find({title: title});
+  this.body = res;
+}
+
+
+/**
+ * Get info of stuff.
+ */
+function *getStuff(owner) {
+  owner = decodeURI(owner);
+  var res = yield {hello: "xxxxx"};
+  this.body = res;
+}
+
+/**
+ * Create a stuff.
+ */
+function *createStuff(owner) {
   title = decodeURI(title);
   var res = yield books.find({title: title});
   this.body = res;
